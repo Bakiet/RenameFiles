@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Rename File Application</title>
+    @Styles.Render("~/Content/css")
+   @* @Styles.Render("~/Content/vendor")*@
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Styles.Render("~/Content/vendor/bootstrap-3.3.6/css/bootstrap.min.css")
+    @Styles.Render("~/Content/vendor/bootstrap-3.3.6/css/bootstrap-theme.min.css")
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    @Styles.Render("~/Content/vendor/bootstrap-3.3.6/css/ie10-viewport-bug-workaround.css")
+
+    @Styles.Render("~/Content/vendor/font-awesome-4.7.0/css/font-awesome.min.css")
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Styles.Render("~/Content/vendor/dataTables-1.10.13/media/css/dataTables.bootstrap.min.css")
+
+    @Styles.Render("~/Content/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css")
+
+    @Styles.Render("~/Content/css/msgcolores.css")
+
+    @Styles.Render("~/Content/css/main.css")
+
+    @Styles.Render("~/Content/css/main2.css")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Rename File", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @if (TempData["FlashError"] != null)
+        {
+            <div class="alert alert-dismissible alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                @TempData["FlashError"]
+            </div>
+        }
+        @if (TempData["FlashSuccess"] != null)
+        {
+            <div class="alert alert-dismissible alert-success" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                @TempData["FlashSuccess"]
+            </div>
+        }
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Rename File Application</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Content/vendor/bootstrap-3.3.6/js/bootstrap.min.js")
+    @Scripts.Render("~/Content/vendor/dataTables-1.10.13/media/js/jquery.dataTables.min.js")
+    @Scripts.Render("~/Content/vendor/dataTables-1.10.13/media/js/dataTables.bootstrap.min.js")
+    @Scripts.Render("~/Content/vendor/bootstrap-confirmation.min.js")
+    @Scripts.Render("~/Content/vendor/moment/moment-with-locales.min.js")
+    @Scripts.Render("~/Content/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js")
+    @Scripts.Render("~/Content/vendor/jquery.blockUI.js")
+
+    @Scripts.Render("~/Content/js/bootbox.js")
+    @Scripts.Render("~/Content/js/mensajes.js")
+    @Scripts.Render("~/Content/vendor/jquery.numeric.js")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+
+
+    <script type="text/javascript">
+        $('[data-toggle=confirmation]').confirmation({
+            rootSelector: '[data-toggle=confirmation]',
+            container: 'body'
+        });
+
+        $(document).ready(function () {
+            /* $(document).ajaxStart(function () {
+                 $.blockUI({
+                     message: 'Por favor espere...'
+                 });
+
+             }).ajaxStop($.unblockUI);*/
+        });
+
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

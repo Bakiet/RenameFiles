@@ -1,0 +1,70 @@
+﻿@model RenameFiles.Models.CompanyStamp_tab
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Rename File";
+    var companyStamp_tab = (List<RenameFiles.Models.CompanyStamp_tab>)ViewBag.companyStamp_tab;
+    var companyStamp = (RenameFiles.Models.CompanyStamp_tab)ViewBag.companyStamp;
+    
+}
+
+<script type="text/javascript">
+
+    function ShowPopUp() {
+
+        window.open('/Home/Photo', "wndPopUp", 'width=720,height=400,left=100,top=100,resizable=no');
+
+    }
+
+</script>
+
+
+
+
+<fieldset>
+    <div style="padding:10px;">
+      
+      @using (Html.BeginForm())
+      {
+        <div>
+            <p>
+                Search FileNumber: @Html.TextBox("searchstring")
+                <input type="submit" class="fa fa-search" placeholder="Search" />
+            </p>
+        </div>
+      }
+        @using (Html.BeginForm("Save", "Home", FormMethod.Post))
+        {
+            
+            @Html.TextBoxFor(model => model.FileNumber, htmlAttributes: new { id = "txtfilenumber", placeholder = "filenumber" });
+            @Html.TextBoxFor(model => model.FileName, htmlAttributes: new { id = "txtfilename", placeholder = "filename" });
+            //@Html.TextBox("filename", ViewData["filename"], htmlAttributes: new { id = "txtfilename", placeholder = "filename" });
+                     
+            <input type="button" name="saveboton" id="btnSave" value="Take Photo" onclick="ShowPopUp();" />
+
+            <input id="btnsave" type="submit" class="fa fa-save" />
+            <div style="padding:10px;">
+            @if (companyStamp != null)
+            { 
+                
+               
+                 <img id="image" src="@Url.Action("GetImg", new { id = Path.GetFileNameWithoutExtension(companyStamp.FilePath) })" />
+
+            }
+            else
+            {
+                
+                <img id="Userpic" src="@ViewBag.pic" />
+                <img id="image" src="" />
+            }
+
+           
+            </div>
+            
+            
+        }
+      
+    
+</div>
+   
+</fieldset>
+

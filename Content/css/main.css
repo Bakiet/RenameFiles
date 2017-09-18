@@ -1,0 +1,139 @@
+html,body{
+    height: 100%
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1170px;
+    }
+}
+
+.navbar-main {
+    /*min-height: 80px;*/
+    background-color: #404040;
+    background-image: none;
+    border-color: #66aaaa;
+}
+
+.navbar-main .navbar-nav > .active > a,
+.navbar-main .navbar-nav > .active > a:focus,
+.navbar-main .navbar-nav > .active > a:hover {
+    background-color: #66aaaa;
+    background-image: none;
+}
+
+.navbar-main .nav {
+    /*margin-top: 15px;*/
+}
+
+.navbar-main .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-main .navbar-nav>li>a:focus {
+    color: #22aaaa;
+}
+
+.navbar-main .navbar-nav>li>a:hover {
+    color: #22aaaa;
+}
+
+.navbar-main .dropdown-menu>.active>a, 
+.navbar-main .dropdown-menu>.active>a:focus, 
+.navbar-main .dropdown-menu>.active>a:hover {
+    background-color: #66aaaa;    
+}
+
+.form-legend {
+    margin-top: 0px;
+    border-bottom: solid 1px #ccc;
+    padding-left: 20px;
+    font-size: 1em;
+    width: 100%;
+    color: #808e8e;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #66aaaa;
+    border-color: #ccc;
+    background-image: none;
+}
+
+    .btn-primary:hover, .btn-primary:focus {
+        background-color: #22aaaa;
+        border-color: #ccc;
+    }
+
+.pagination > li > a, .pagination > li > span {
+    color: #000;
+}
+
+
+.jumbotron {
+    background-color: #eeeedd;
+}
+
+h2{
+  color: #66aaaa;
+}
+h1{
+  color: #66aaaa;
+  font-size: 2.5em;
+}
+
+.panel-heading {
+    padding: 5px 15px;
+ 
+}
+.panel-default>.panel-heading {
+    background-color: #808e8e;
+    background-image: none;
+    color: white;
+}
+
+.pagination {
+    margin: 5px 0;
+}
+.well{ 
+    background-color: #a3d4d4; 
+
+ }
+
+ .well2 {
+    background-color: #fff;
+    background-image: none;
+ }
+
+ .filters .form-control {
+    height: auto;
+    text-align: center;
+    font-size: .8em;
+ }
+
+.table tbody>tr>td.vert-align, .table tbody>tr>th.vert-align{
+    vertical-align: middle;
+}
+
+.field-validation-error {
+    color: red;
+}
+.validation-summary-errors {
+    color: red;
+}
+
+.page-description-title {
+    border-bottom: solid 1px #eee; color: #888; 
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  
+
+
+    color: white;
+    background-color: #66aaaa;
+    text-align: center;
+}
